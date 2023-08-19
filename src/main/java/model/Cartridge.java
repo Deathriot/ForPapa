@@ -11,12 +11,12 @@ public class Cartridge {
         this.count = count;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return count == 0;
     }
 
     //Выдает одну банкноту
-    public void giveBanknote(){
+    public void giveBanknote() {
         count--;
         System.out.println("Выдано " + denomination + " рублей.");
     }

@@ -37,7 +37,7 @@ public class CartridgeManager {
         System.out.println();
         System.out.println("Для суммы " + initialSum + " рублей было выдано:");
 
-        for (int denomination : banknotesOut.keySet()){
+        for (int denomination : banknotesOut.keySet()) {
             int count = banknotesOut.get(denomination);
 
             System.out.println(count + " штук по " + denomination + " рублей");
@@ -47,14 +47,14 @@ public class CartridgeManager {
     //Проверяем, можно ли вообще обналичить сумму, хватает ли денег
     //!!! Да, может быть так, что может остаться невыданная "мелочь", но давай это опустим :)
 
-    private void checkAvailableSum(int rubles){
+    private void checkAvailableSum(int rubles) {
         int totalSum = 0;
 
         for (Cartridge currentCartridge : cartridges) {
             totalSum += currentCartridge.count * currentCartridge.denomination;
         }
 
-        if(rubles > totalSum){
+        if (rubles > totalSum) {
             throw new NotEnoughMoneyException();
         }
     }

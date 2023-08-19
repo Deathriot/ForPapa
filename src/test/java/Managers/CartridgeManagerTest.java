@@ -12,14 +12,15 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CartridgeManagerTest {
 
     private CartridgeManager manager;
+
     @BeforeEach
-    public void create(){
+    public void create() {
         manager = new CartridgeManager();
     }
 
     //Должен выдать 3 по 5000 для суммы 1500
     @Test
-    public void shouldGive3of5000for15000(){
+    public void shouldGive3of5000for15000() {
         manager.cartridges.add(new Cartridge(5000, 4));
         manager.cartridges.add(new Cartridge(1000, 4));
 
@@ -31,7 +32,7 @@ public class CartridgeManagerTest {
     //Должен выдать 4 по 5000 и 7 по 1000 для 27000
     // Ведь 5-тысячных купюр не хватает
     @Test
-    public void shouldGive4of5000And7of1000For27000(){
+    public void shouldGive4of5000And7of1000For27000() {
         manager.cartridges.add(new Cartridge(5000, 4));
         manager.cartridges.add(new Cartridge(1000, 20));
         manager.cartridges.add(new Cartridge(500, 100));
@@ -44,7 +45,7 @@ public class CartridgeManagerTest {
 
     //Ну тут то же самое примерно
     @Test
-    public void shouldGive1of1000And1Of500And20Of100For8000(){
+    public void shouldGive1of1000And1Of500And20Of100For8000() {
         manager.cartridges.add(new Cartridge(5000, 0));
         manager.cartridges.add(new Cartridge(1000, 1));
         manager.cartridges.add(new Cartridge(500, 10));
@@ -59,7 +60,7 @@ public class CartridgeManagerTest {
 
     //Должен выкидывать исключение если денег не хватает
     @Test
-    public void shouldBeExceptionWhenNoMoneyFor55000(){
+    public void shouldBeExceptionWhenNoMoneyFor55000() {
         manager.cartridges.add(new Cartridge(5000, 3));
         manager.cartridges.add(new Cartridge(1000, 1));
         manager.cartridges.add(new Cartridge(500, 10));
